@@ -2,7 +2,7 @@
 
 ### Job Summary
 
-This job will run fastp on Hydra in a loop. User will provide genomic raw reads. Trimmed reads will be outputed to a directory named 'fastp_trimmed'. To run the script, see 'TO RUN THIS JOB' below.
+This job will run fastp on Hydra in a loop. User will provide genomic raw reads. Trimmed reads will be outputed to a directory named 'fastp_trimmed'. To run the script see 'TO RUN THIS JOB' below.
 
 ```
 #!/bin/sh

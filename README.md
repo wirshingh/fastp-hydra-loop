@@ -2,7 +2,7 @@
 
 ### Job Summary
 
-This job will run fastp on Hydra in a loop. User will provide genomic raw reads. Trimmed reads will be outputed to a directory named 'fastp_trimmed'. To run the script see 'TO RUN THIS JOB' below.
+This job will run fastp on Hydra in a loop and trim user-provided genomic raw reads. Trimmed reads will be outputed to a directory named 'fastp_trimmed'. To run the script see 'To Run this Job' below.
 
 ```
 #!/bin/sh
@@ -72,9 +72,9 @@ echo = `date` job $JOB_NAME done
 
 ```
 
-### TO RUN THIS JOB
+### To Run this Job
 
-The raw read files must end in '_R1_001_fastq.gz' (forward) and '_R2_001_fastq.gz' (reverse) for the script to work. Alternatively, the job file can be modified to match the file names of the R1 and R2 reads.
+The raw read files must end in '_R1_001_fastq.gz' (forward) and '_R2_001_fastq.gz' (reverse) for the script to work. Alternatively, the job file can be customized to match the file names of the R1 and R2 reads.
 
 User will need to add two job-specific items to the script:
 
@@ -85,3 +85,5 @@ After the '=' copy full path to the directory that contains the raw reads.
 2. SAMPLEDIR_BASE="path to base project directory"
 
 After the '=' copy the full path to the base directory. This is the directory where the job file is located.
+
+After the job is edited save it as 'fastp_loop.job' and run the job on hydra (qsub fastp_loop.job).

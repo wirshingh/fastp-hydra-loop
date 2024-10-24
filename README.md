@@ -76,7 +76,7 @@ echo = `date` job $JOB_NAME done
 
 The raw read files must end in '_R1_001_fastq.gz' (forward) and '_R2_001_fastq.gz' (reverse) for the script to work. Alternatively, the job file can be edited to match the file names of the R1 and R2 reads.
 
-Add these items to the script:
+Edit these items in the job file:
 
 1. SAMPLEDIR_RAW="path to raw reads"
 

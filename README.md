@@ -9,8 +9,8 @@ This job will run fastp on Hydra in a loop and trim user-provided genomic raw re
 # ----------------Parameters---------------------- #
 #$ -S /bin/sh
 #$ -pe mthread 6
-#$ -q sThC.q
-#$ -l mres=6G,h_data=1G,h_vmem=1G
+#$ -q mThC.q
+#$ -l mres=36G,h_data=6G,h_vmem=6G
 #$ -cwd
 #$ -j y
 #$ -N fastp_loop

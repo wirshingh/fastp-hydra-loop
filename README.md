@@ -32,7 +32,7 @@ SAMPLEDIR_RAW="path to raw reads"
 # Set sample directory path to base project directory
 SAMPLEDIR_BASE="path to base project directory"
 
-# Loop over each R1 file matching the pattern
+# Loop over each R1 file to get unique sample name
 for GETSAMPLENAME in ${SAMPLEDIR_RAW}/*_R1_001.fastq.gz; do
     # Check if the file exists to avoid errors
     if [ ! -f "$GETSAMPLENAME" ]; then

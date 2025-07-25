@@ -84,6 +84,6 @@ After the '=' copy full path to the directory that contains the raw reads.
 
 2. SAMPLEDIR_BASE="path to base project directory"
 
-After the '=' copy the full path to the base directory. This is the directory where the job file is located.
+After the '=' copy the full path to the base directory. This is the directory where the output directory will be copied, and where the job file can be placed.
 
 After the job is edited save it as 'fastp_loop.job' and run the job on hydra (qsub fastp_loop.job).

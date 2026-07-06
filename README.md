@@ -23,14 +23,14 @@ module load bio/fastp
 echo + `date` job $JOB_NAME started in $QUEUE with jobID=$JOB_ID on $HOSTNAME
 echo + NSLOTS = $NSLOTS
 
-# Create output directory if it doesn't exist
-mkdir -p fastp_trimmed
-
 # Set sample directory path to raw reads
 SAMPLEDIR_RAW="path to raw reads"
 
-# Set sample directory path to base project directory
+# Set sample directory path to base project directory. This is where the results will be.
 SAMPLEDIR_BASE="path to base project directory"
+
+# Create output directory in the base directory
+mkdir -p ${SAMPLEDIR_BASE}/fastp_trimmed
 
 # Loop over each R1 file to get unique sample name
 for GETSAMPLENAME in ${SAMPLEDIR_RAW}/*_R1_001.fastq.gz; do

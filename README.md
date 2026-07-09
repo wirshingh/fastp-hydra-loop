@@ -26,7 +26,7 @@ echo + NSLOTS = $NSLOTS
 # Set sample directory path to raw reads
 SAMPLEDIR_RAW="path to raw reads"
 
-# Set sample directory path to base project directory. This is where the results will be.
+# Set sample directory path to base project directory. This is where the results will go
 SAMPLEDIR_BASE="path to base project directory"
 
 # Create output directory in the base directory

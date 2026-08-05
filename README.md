@@ -23,14 +23,26 @@ module load bio/fastp
 echo + `date` job $JOB_NAME started in $QUEUE with jobID=$JOB_ID on $HOSTNAME
 echo + NSLOTS = $NSLOTS
 
+#============================================================================
+# CONFIGURATION
+#============================================================================
+
 # Set sample directory path to raw reads
 SAMPLEDIR_RAW="path to raw reads"
 
 # Set sample directory path to base project directory. This is where the results will go
 SAMPLEDIR_BASE="path to base project directory"
 
+#============================================================================
+# PART 1 - CREATE OUTPUT DIRECTORY
+#============================================================================
+
 # Create output directory in the base directory
 mkdir -p ${SAMPLEDIR_BASE}/fastp_trimmed
+
+#============================================================================
+# PART 2 - RUN FASTP IN A LOOP 
+#============================================================================
 
 # Loop over each R1 file to get unique sample name
 for GETSAMPLENAME in ${SAMPLEDIR_RAW}/*_R1_001.fastq.gz; do
@@ -76,14 +88,14 @@ echo = `date` job $JOB_NAME done
 
 The raw read files must end in '_R1_001_fastq.gz' (forward) and '_R2_001_fastq.gz' (reverse) for the script to work. Alternatively, the job file can be edited to match the text of the file names of the R1 and R2 reads after the sample name.
 
-Edit these items in the job file:
+Under CONFIGURATION edit these items in the job file:
 
 1. SAMPLEDIR_RAW="path to raw reads"
 
-After the '=' copy full path to the directory that contains the raw reads.
+    After the '=' copy full path to the directory that contains the raw reads.
 
 2. SAMPLEDIR_BASE="path to base project directory"
 
-After the '=' copy the full path to the base directory. This is where the result will go.
+    After the '=' copy the full path to the base directory. This is where the result will go.
 
 After the job is edited save it as 'fastp_loop.job' and run the job on hydra (qsub fastp_loop.job).
